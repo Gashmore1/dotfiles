@@ -1,0 +1,16 @@
+{
+  "paths": {
+    "Neovim": {
+      "neovim": "~/.config/nvim"
+    },
+    "ohmyzsh": {
+      "ohmyzsh/zshrc": "~/.zshrc"
+    },
+    "tmux": {
+      "tmux/tmux.conf": "~/.tmux.conf"
+    }
+  },
+  "addtion steps": {
+    "tmux plugins": ["tpm"]
+  }
+}

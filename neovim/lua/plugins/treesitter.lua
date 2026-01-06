@@ -1,9 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  config = function()
+  branch = "main",
+  lazy = false,
+  configs = function()
     -- Treesitter sytax highlighting tool
-    local config = require("nvim-treesitter.configs")
+    local config = require("nvim-treesitter.config")
     config.setup({
       ensure_installed = {
         "bash",

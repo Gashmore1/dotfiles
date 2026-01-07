@@ -40,7 +40,16 @@ return {
         log_level = vim.log.levels.DEBUG,
         testify_enabled = true,
         runner = "gotestsum", -- Optional, but recommended
-        go_test_args = { "-v", "-race", "-count=1" },
+        go_test_args = function()
+
+          local node = vim.treesitter.get_node()
+
+          if node and (node:type() == 'identifier' and node:parent():type() == 'function_declaration') or (node:type() == 'field_identifier' and node:parent():type() == 'method_declaration')  then
+            local function_name = vim.treesitter.get_node_text(vim.treesitter.get_node(),0)
+            vim.notify(function_name, vim.log.levels.ERROR)
+          end
+          return { "-v", "-race", "-count=1"}
+        end,
       }
       require("neotest").setup({
         adapters = {

@@ -3,11 +3,38 @@ return {
   build = ":TSUpdate",
   branch = "main",
   lazy = false,
-  configs = function()
+  config = function()
     -- Treesitter sytax highlighting tool
-    local config = require("nvim-treesitter.config")
-    config.setup({
-      ensure_installed = {
+    local ts = require("nvim-treesitter")
+    --ts.setup({
+    --  ensure_installed = {
+    --    "bash",
+    --    "c",
+    --    "cpp",
+    --    "css",
+    --    "dockerfile",
+    --    "go",
+    --    "helm",
+    --    "html",
+    --    "java",
+    --    "javascript",
+    --    "json",
+    --    "lua",
+    --    "python",
+    --    "regex",
+    --    "terraform",
+    --    "tmux",
+    --    "vim",
+    --    "vimdoc",
+    --    "yaml",
+    --  },
+    --  sync_install = true,
+    --  highlight = { enable = true },
+    --  indent = { enable = true },
+    --})
+    ts.setup({"~/.local/share/nvim/tree-sitter"})
+    ts.install(
+      {
         "bash",
         "c",
         "cpp",
@@ -27,10 +54,11 @@ return {
         "vim",
         "vimdoc",
         "yaml",
-      },
-      sync_install = true,
-      highlight = { enable = true },
-      indent = { enable = true }
+      }
+    )
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = { 'go' },
+      callback = function() vim.treesitter.start() end,
     })
   end
 }

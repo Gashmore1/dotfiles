@@ -15,12 +15,13 @@ return {
           "bashls",
           "docker_compose_language_service",
           "dockerls",
+          "eslint",
+          "gopls",
           "helm_ls",
           "jsonls",
           "pylsp",
           "terraformls",
           "yamlls",
-          "eslint",
         }
       })
     end

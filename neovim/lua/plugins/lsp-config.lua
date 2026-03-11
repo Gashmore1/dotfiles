@@ -31,21 +31,21 @@ return {
     lazy = false,
     event = { "BufReadPre", "BufNewFile", "BufEnter" },
     config = function()
-      vim.lsp.config('ansiblels', {})
+      -- vim.lsp.config('ansiblels', {})
       vim.lsp.config('bashls', {})
       vim.lsp.config('docker_compose_language_service', {})
       vim.lsp.config('dockerls', {})
       vim.lsp.config('eslint', {})
       vim.lsp.config('gopls', {})
       vim.lsp.config('helm_ls', {
-          settings = {
-            ['helm-ls'] = {
-              yamlls = {
-                path = "yaml-language-server",
-              }
+        settings = {
+          ['helm-ls'] = {
+            yamlls = {
+              path = "yaml-language-server",
             }
           }
         }
+      }
       )
       vim.lsp.config('jsonls', {})
       vim.lsp.config('lua_ls', {
@@ -73,7 +73,7 @@ return {
       vim.lsp.enable('helm_ls')
       vim.lsp.enable('jsonls')
       vim.lsp.enable('lua_ls')
-      -- vim.lsp.enable('nil_ls')
+      vim.lsp.enable('nil_ls')
       vim.lsp.enable('pylsp')
       -- vim.lsp.enable('sqlls')
       vim.lsp.enable('terraformls')

@@ -6,7 +6,7 @@ return {
   config = function()
     -- Treesitter sytax highlighting tool
     local ts = require("nvim-treesitter")
-    ts.setup({"~/.local/share/nvim/tree-sitter"})
+    ts.setup({ "~/.local/share/nvim/tree-sitter" })
     ts.install(
       {
         "bash",
@@ -21,6 +21,7 @@ return {
         "javascript",
         "json",
         "lua",
+        "nix",
         "python",
         "regex",
         "terraform",
@@ -31,7 +32,7 @@ return {
       }
     )
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'go' },
+      pattern = { 'go', 'markdown' },
       callback = function() vim.treesitter.start() end,
     })
   end

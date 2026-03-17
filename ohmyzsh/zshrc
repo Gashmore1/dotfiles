@@ -115,7 +115,5 @@ source $ZSH/oh-my-zsh.sh
 
 #alias ls='colorls -1'
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
+export OLLAMA_KV_CACHE_TYPE=q8_0
+export OLLAMA_CONTEXT_LENGTH=64000

@@ -73,7 +73,7 @@ return {
       vim.lsp.enable('helm_ls')
       vim.lsp.enable('jsonls')
       vim.lsp.enable('lua_ls')
-      vim.lsp.enable('nil_ls')
+      -- vim.lsp.enable('nil_ls')
       vim.lsp.enable('pylsp')
       -- vim.lsp.enable('sqlls')
       vim.lsp.enable('terraformls')

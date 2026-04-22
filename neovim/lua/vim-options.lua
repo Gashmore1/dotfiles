@@ -12,6 +12,10 @@ vim.filetype.add({
     [".*/templates/.*%.tpl"] = "helm",
     [".*/templates/.*%.ya?ml"] = "helm",
     ["helmfile.*%.ya?ml"] = "helm",
-		["values.ya?ml"] = "helm"
+    ["values.ya?ml"] = "helm"
   },
 })
+
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable = false

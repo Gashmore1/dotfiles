@@ -11,11 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.diagnostic.config({virtual_text = true})
+vim.diagnostic.config({ virtual_text = true })
 vim.diagnostic.enable()
 
 -- Add default vim changes
 require("vim-options")
 -- Set up Lazy
 require("lazy").setup("plugins")
-

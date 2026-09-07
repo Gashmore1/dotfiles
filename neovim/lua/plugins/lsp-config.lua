@@ -33,11 +33,13 @@ return {
     config = function()
       -- vim.lsp.config('ansiblels', {})
       vim.lsp.config('bashls', {})
+      vim.lsp.config('buildifier', {})
       vim.lsp.config('docker_compose_language_service', {})
       vim.lsp.config('dockerls', {})
       vim.lsp.config('eslint', {})
       vim.lsp.config('gopls', {})
       vim.lsp.config('helm_ls', {
+        filetypes = { "helm" },
         settings = {
           ['helm-ls'] = {
             yamlls = {
@@ -45,8 +47,7 @@ return {
             }
           }
         }
-      }
-      )
+      })
       vim.lsp.config('jsonls', {})
       vim.lsp.config('lua_ls', {
         settings = {
@@ -63,9 +64,15 @@ return {
       vim.lsp.config('terraformls', {})
       vim.lsp.config('yamlls', {})
       vim.lsp.config('vuels', {})
+      vim.lsp.config('circleci-yaml-language-server', {
+        cmd = { 'circleci-yaml-language-server', '-schema', 'schema.json', '--stdio' },
+        filetypes = { "circleci" },
+        root_markers = { '.circleci', '.git' },
+      })
 
       -- vim.lsp.enable('ansiblels')
       vim.lsp.enable('bashls')
+      vim.lsp.enable('buildifier')
       vim.lsp.enable('docker_compose_language_service')
       vim.lsp.enable('dockerls')
       vim.lsp.enable('eslint')
@@ -77,8 +84,8 @@ return {
       vim.lsp.enable('pylsp')
       -- vim.lsp.enable('sqlls')
       vim.lsp.enable('terraformls')
-      vim.lsp.enable('terraformls')
       vim.lsp.enable('yamlls')
+      vim.lsp.enable('circleci-yaml-language-server')
     end,
   },
 }

@@ -20,6 +20,7 @@ return {
         "java",
         "javascript",
         "json",
+        "latex",
         "lua",
         "nix",
         "python",

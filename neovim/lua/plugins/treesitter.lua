@@ -26,7 +26,6 @@ return {
         "python",
         "regex",
         "terraform",
-        "tmux",
         "vim",
         "vimdoc",
         "yaml",
